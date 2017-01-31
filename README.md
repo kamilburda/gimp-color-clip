@@ -14,7 +14,7 @@ same effect as Normalize.
 Installation
 ------------
 
-Copy the "color_clip.py" file to
+Copy the `color_clip.py` file to
 `[your home folder]\.gimp-[GIMP version]\plug-ins`.
 
 Example of an installation directory: 
@@ -26,7 +26,8 @@ Example of an installation directory:
 Usage
 -----
 
-Select `Colors -> Color Clip...` and adjust the clip percentages as desired.
+Open an image in GIMP, select `Colors -> Color Clip...` and adjust the clip
+percentages as desired.
 
 
 Support
