@@ -3,7 +3,7 @@ Color Clip
 
 Color Clip is a [GIMP](https://www.gimp.org/) plug-in that darkens/brightens a
 given percentage of the darkest/brightest pixels in a drawable. The drawable can
-be a layer, layer mask or a channel.
+be a layer, layer mask or channel.
 
 Color Clip works similarly to the GIMP's built-in tool Normalize
 (`Colors -> Auto -> Normalize`), except that the black and white clip percentages
