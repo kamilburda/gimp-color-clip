@@ -14,7 +14,7 @@ same effect as Normalize.
 Installation
 ------------
 
-GIMP 2.10 or later is required.
+GIMP 2.10 is required.
 
 1. In GIMP, locate the folder containing GIMP plug-ins - open GIMP and go to Edit → Preferences → Folders → Plug-Ins.
 2. Copy `color_clip.py` to the to one of the folders identified in step 1.
