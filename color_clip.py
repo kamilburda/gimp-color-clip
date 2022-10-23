@@ -19,9 +19,8 @@ import gimpfu
 import gimpenums
 
 
-# `gimpenums` doesn't seem to define an enum for the RGB histogram
-# pseudo-channel.
-HISTOGRAM_RGB = 5
+# `gimpenums` doesn't seem to define an enum for the RGB histogram pseudo-channel.
+HISTOGRAM_RGB = 6
 
 
 def color_clip(image, drawable, clip_percent_black, clip_percent_white):
@@ -31,7 +30,7 @@ def color_clip(image, drawable, clip_percent_black, clip_percent_white):
   
   black_point, white_point = get_color_clip(
     image, drawable, clip_percent_black, clip_percent_white)
-  pdb.gimp_levels(drawable, 0, black_point, white_point, 1.0, 0, 255)
+  pdb.gimp_drawable_levels(drawable, 0, black_point / 255, white_point / 255, 0, 1.0, 0.0, 1.0, 0)
 
 
 def get_color_clip(image, drawable, clip_percent_black, clip_percent_white):
@@ -138,8 +137,8 @@ def get_white_point_histogram_percentile(
 
 
 def _get_histogram_percentile(drawable, histogram_channel, start_range, end_range):
-  normalized_percentile = pdb.gimp_histogram(
-    drawable, histogram_channel, start_range, end_range)[5]
+  normalized_percentile = pdb.gimp_drawable_histogram(
+    drawable, histogram_channel, start_range / 255, end_range / 255)[5]
   
   return normalized_percentile * 100.0
 
