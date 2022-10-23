@@ -14,32 +14,29 @@ same effect as Normalize.
 Installation
 ------------
 
-Copy the `color_clip.py` file to
-`[your home folder]\.gimp-[GIMP version]\plug-ins`.
+1. In GIMP, locate the folder containing GIMP plug-ins - open GIMP and go to Edit → Preferences → Folders → Plug-Ins.
+2. Copy `color_clip.py` to the to one of the folders identified in step 1.
 
-Example of an installation directory: 
-* Windows: `C:\Users\khalim\.gimp-2.8\plug-ins`
-* Linux: `/home/khalim/.gimp-2.8/plug-ins`
-* OS X: `/Users/khalim/Library/Application Support/GIMP/2.8/plug-ins`
+For Windows, make sure you have GIMP installed with support for Python scripting.
+
+For Linux, make sure you use a GIMP installation bundled as Flatpak (which can be downloaded from the [official GIMP page](https://www.gimp.org/downloads/)) or AppImage.
+
+For macOS, make sure you have Python 2.7 installed.
 
 
 Usage
 -----
 
-Open an image in GIMP, select `Colors -> Color Clip...` and adjust the clip
-percentages as desired.
+Open an image in GIMP, select `Colors -> Color Clip...` and adjust the clip percentages as desired.
 
 
 Support
 -------
 
-You can report issues, ask questions or request new features:
-* on the [GitHub issues page](https://github.com/khalim19/gimp-plugin-color-clip/issues)
-* via email: khalim19 AT gmail DOT com
+You can report issues, ask questions or request new features on the [GitHub issues page](https://github.com/khalim19/gimp-plugin-color-clip/issues).
 
 
 License
 -------
 
-Color Clip is licensed under the
-[GNU GPLv3](http://www.gnu.org/licenses/gpl-3.0.html) license.
+Color Clip is licensed under the [BSD 3-Clause](LICENSE) license.
