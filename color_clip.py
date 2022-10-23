@@ -1,8 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from __future__ import absolute_import, division, print_function, unicode_literals
-
 """
 Color Clip darkens/brightens a given percentage of the darkest/brightest pixels
 in a drawable. The drawable can be a layer, layer mask or a channel.
@@ -13,20 +11,17 @@ are adjustable. In fact, Color Clip with the percentages set to 0% achieves the
 same effect as Normalize.
 """
 
-#===============================================================================
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import gimp
 from gimp import pdb
 import gimpfu
 import gimpenums
 
-#===============================================================================
 
 # `gimpenums` doesn't seem to define an enum for the RGB histogram
 # pseudo-channel.
 HISTOGRAM_RGB = 5
-
-#===============================================================================
 
 
 def color_clip(image, drawable, clip_percent_black, clip_percent_white):
@@ -68,9 +63,6 @@ def get_color_clip(image, drawable, clip_percent_black, clip_percent_white):
     black_point = white_point
   
   return black_point, white_point
-
-
-#===============================================================================
 
 
 def _get_color_clip(drawable, clip_percent_black, clip_percent_white):
@@ -199,8 +191,6 @@ gimpfu.register(
      (0.0, 100.0, 0.1))],
   results=[],
   function=color_clip)
-
-#===============================================================================
 
 if __name__ == "__main__":
   gimpfu.main()
