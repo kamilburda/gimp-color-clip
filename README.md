@@ -32,7 +32,7 @@ Open an image in GIMP, select `Colors -> Color Clip...` and adjust the clip perc
 Support
 -------
 
-You can report issues, ask questions or request new features on the [GitHub issues page](https://github.com/khalim19/gimp-plugin-color-clip/issues).
+You can report issues, ask questions or request new features on the [GitHub issues page](https://github.com/kamilburda/gimp-color-clip/issues).
 
 
 License

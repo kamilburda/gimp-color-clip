@@ -157,8 +157,8 @@ gimpfu.register(
     "Return the black and white points of a drawable based on the "
     "specified clip percentages."),
   help=_plugin_help,
-  author="khalim19",
-  copyright="khalim19",
+  author="Kamil Burda",
+  copyright="Kamil Burda",
   date="2017",
   label="",
   imagetypes="RGB*, GRAY*",
@@ -178,8 +178,8 @@ gimpfu.register(
     "Darken/brighten a given percentage of the darkest/brightest pixels in the "
     "drawable"),
   help="The drawable can be a layer, layer mask or a channel.\n" + _plugin_help,
-  author="khalim19",
-  copyright="khalim19",
+  author="Kamil Burda",
+  copyright="Kamil Burda",
   date="2015",
   label="<Image>/Colors/Color Clip...",
   imagetypes="RGB*, GRAY*",
