@@ -29,6 +29,14 @@ Usage
 Open an image in GIMP, select `Colors -> Color Clip...` and adjust the clip percentages as desired.
 
 
+Example
+-------
+
+Original (left) and with Color Clip applied with 5% white clip and 5% black clip (right):
+
+![Example of Color Clip](docs/color_clip_example.png)
+
+
 Support
 -------
 
