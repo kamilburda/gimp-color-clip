@@ -14,7 +14,7 @@ Installation
 GIMP 2.10 is required.
 
 1. In GIMP, locate the folder containing GIMP plug-ins - open GIMP and go to Edit → Preferences → Folders → Plug-Ins.
-2. Copy `color_clip.py` to the to one of the folders identified in step 1.
+2. Copy the `color_clip` folder inside one of the folders identified in step 1.
 
 For Windows, make sure you have GIMP installed with support for Python scripting.
 

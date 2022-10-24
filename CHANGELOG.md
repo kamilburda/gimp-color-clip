@@ -1,3 +1,8 @@
+1.2
+===
+
+* Moved the script under a folder with the same name for improved compatibility with GIMP 2.10.
+
 1.1
 ===
 
