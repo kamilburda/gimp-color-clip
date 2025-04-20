@@ -3,22 +3,22 @@
 Color Clip is a [GIMP](https://www.gimp.org/) plug-in that darkens/brightens a given percentage of the darkest/brightest pixels in a drawable.
 The drawable can be a layer, layer mask or channel.
 
-Color Clip works similarly to the GIMP's built-in tool Normalize (`Colors -> Auto -> Normalize`), except that the black and white clip percentages are adjustable.
-In fact, Color Clip with the percentages set to 0% achieves the same effect as Normalize.
-
 
 ## Installation
 
 GIMP 3.0.0 or later is required.
 
-1. In GIMP, locate the folder containing GIMP plug-ins - open GIMP and go to Edit → Preferences → Folders → Plug-Ins.
-2. Copy the `color_clip` folder inside one of the folders identified in step 1.
+1. In GIMP, locate the folder containing GIMP plug-ins - open GIMP and go to Edit → Preferences → Folders → Plug-Ins. If you cannot locate any of the folders on your system, you can add a custom folder.
+2. Copy the `color-clip` folder inside one of the folders identified in step 1. The folder hierarchy should look like this:
+    ```
+    plug-ins/
+        ...other plug-in folders...
+        color-clip/
+            color-clip.py
+            procedure.py
+    ```
 
-For Windows, make sure you have GIMP installed with support for Python scripting.
-
-For Linux, make sure you use a GIMP installation bundled as Flatpak (which can be downloaded from the [official GIMP page](https://www.gimp.org/downloads/)) or AppImage.
-
-For macOS, make sure you have Python 2.7 installed.
+For Windows, make sure you have GIMP installed with support for Python plug-ins.
 
 
 ## Usage
