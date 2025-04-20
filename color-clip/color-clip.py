@@ -233,8 +233,7 @@ procedure.register_procedure(
   ),
   attribution=('Kamil Burda', 'Kamil Burda', '2015'),
   sensitivity_mask=(
-    Gimp.ProcedureSensitivityMask.NO_DRAWABLES
-    | Gimp.ProcedureSensitivityMask.DRAWABLE
+    Gimp.ProcedureSensitivityMask.DRAWABLE
     | Gimp.ProcedureSensitivityMask.DRAWABLES),
 )
 
