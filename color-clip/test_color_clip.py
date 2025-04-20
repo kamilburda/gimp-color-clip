@@ -1,14 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import absolute_import, division, print_function, unicode_literals
-
 import unittest
-
-import mock
+import unittest.mock as mock
 
 import color_clip
-
-#===============================================================================
 
 
 _histogram_percentiles_variable_black_max_white = [
@@ -62,16 +57,13 @@ _histogram_percentiles_min_black_variable_white = [
 
 
 def _get_black_point_histogram_percentile(
-      drawable, histogram_channel, point, min_point, max_point):
+      _drawable, _histogram_channel, point, _min_point, _max_point):
   return _histogram_percentiles_variable_black_max_white[point] * 100.0
 
   
 def _get_white_point_histogram_percentile(
-      drawable, histogram_channel, point, min_point, max_point):
+      _drawable, _histogram_channel, point, _min_point, _max_point):
   return _histogram_percentiles_min_black_variable_white[point] * 100.0
-
-
-#===============================================================================
 
 
 @mock.patch(
