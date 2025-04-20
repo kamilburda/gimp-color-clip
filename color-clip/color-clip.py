@@ -15,20 +15,34 @@ def python_fu_color_clip(proc, run_mode, image, drawables, config, _data):
 
   if run_mode == Gimp.RunMode.INTERACTIVE:
     dialog = GimpUi.ProcedureDialog(procedure=proc, config=config, title=None)
-    dialog.fill(['clip-percent-black', 'clip-percent-white', 'tone-reproduction'])
+    dialog.fill(['clip-percent-black', 'clip-percent-white'])
 
     is_ok_pressed = dialog.run()
     if not is_ok_pressed:
       dialog.destroy()
       return Gimp.PDBStatusType.CANCEL
 
+  linear_and_other_precisions = {
+    Gimp.Precision.U8_NON_LINEAR: Gimp.Precision.U8_LINEAR,
+    Gimp.Precision.U8_PERCEPTUAL: Gimp.Precision.U8_LINEAR,
+    Gimp.Precision.U16_NON_LINEAR: Gimp.Precision.U16_LINEAR,
+    Gimp.Precision.U16_PERCEPTUAL: Gimp.Precision.U16_LINEAR,
+    Gimp.Precision.U32_NON_LINEAR: Gimp.Precision.U32_LINEAR,
+    Gimp.Precision.U32_PERCEPTUAL: Gimp.Precision.U32_LINEAR,
+    Gimp.Precision.HALF_NON_LINEAR: Gimp.Precision.HALF_LINEAR,
+    Gimp.Precision.HALF_PERCEPTUAL: Gimp.Precision.HALF_LINEAR,
+    Gimp.Precision.FLOAT_NON_LINEAR: Gimp.Precision.FLOAT_LINEAR,
+    Gimp.Precision.FLOAT_PERCEPTUAL: Gimp.Precision.FLOAT_LINEAR,
+    Gimp.Precision.DOUBLE_NON_LINEAR: Gimp.Precision.DOUBLE_LINEAR,
+    Gimp.Precision.DOUBLE_PERCEPTUAL: Gimp.Precision.DOUBLE_LINEAR,
+  }
+
   image.undo_group_start()
 
   orig_precision = None
-
-  if image.get_precision() != config.get_property('tone-reproduction'):
+  if image.get_precision() not in linear_and_other_precisions.values():
     orig_precision = image.get_precision()
-    image.convert_precision(config.get_property('tone-reproduction'))
+    image.convert_precision(linear_and_other_precisions[orig_precision])
 
   for drawable in drawables:
     black_point, white_point = get_color_clip(
@@ -212,15 +226,6 @@ procedure.register_procedure(
       0.0,
       100.0,
       0.0,
-      GObject.ParamFlags.READWRITE,
-    ],
-    [
-      'enum',
-      'tone-reproduction',
-      'Tone reproduction',
-      'Tone reproduction (TRC) to use for clipping',
-      Gimp.Precision,
-      Gimp.Precision.U8_LINEAR,
       GObject.ParamFlags.READWRITE,
     ],
   ],
